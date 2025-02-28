@@ -53,11 +53,12 @@
 				<article class="box post">
 					<header>
 						<h2>Contact Me!</h2>
-						<p>Feel free to reach out to me via email, through my social media channels, or submit a form here:</p>
+						<p>Feel free to reach out to me via email, through my social media channels, or submit a form
+							here:</p>
 					</header>
 					<div class="m-7">
 						<form action="https://api.web3forms.com/submit" method="POST" id="form">
-							<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+							<input type="hidden" name="access_key" value="a5fb30b6-5d67-4ef1-81c5-05cedd1780e4" />
 							<input type="hidden" name="subject" value="New Submission from Web3Forms" />
 							<input type="checkbox" name="botcheck" id="" style="display: none;" />
 
@@ -164,3 +165,53 @@
 </body>
 
 </html>
+
+<script>
+
+	const form = document.getElementById("form");
+	const result = document.getElementById("result");
+
+	form.addEventListener("submit", function (e) {
+		const formData = new FormData(form);
+		e.preventDefault();
+		var object = {};
+		formData.forEach((value, key) => {
+			object[key] = value;
+		});
+		var json = JSON.stringify(object);
+		result.innerHTML = "Please wait...";
+
+		fetch("https://api.web3forms.com/submit", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json"
+			},
+			body: json
+		})
+			.then(async (response) => {
+				let json = await response.json();
+				if (response.status == 200) {
+					result.innerHTML = json.message;
+					result.classList.remove("text-gray-500");
+					result.classList.add("text-green-500");
+				} else {
+					console.log(response);
+					result.innerHTML = json.message;
+					result.classList.remove("text-gray-500");
+					result.classList.add("text-red-500");
+				}
+			})
+			.catch((error) => {
+				console.log(error);
+				result.innerHTML = "Something went wrong!";
+			})
+			.then(function () {
+				form.reset();
+				setTimeout(() => {
+					result.style.display = "none";
+				}, 5000);
+			});
+	});
+
+</script>
