@@ -1451,7 +1451,6 @@ input, select, textarea {
 	form input[type=password],
 	form select,
 	form textarea {
-		-webkit-appearance: none;
 		display: block;
 		border: 0;
 		padding: 0.75em 1em;
@@ -1607,7 +1606,6 @@ input, select, textarea {
 	input[type="reset"],
 	button,
 	.button {
-		-webkit-appearance: none;
 		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
@@ -1763,9 +1761,9 @@ input, select, textarea {
 		
 		.album .responsive-container-block.img-cont {
 		flex-direction: column;
-		max-width: 33.3%;
+		max-width: 45%;
 		min-height: auto;
-		margin: 0 0 0 0;
+		margin: 0 100 100 0;
 		height: 100%;
 		}
 		
@@ -1842,7 +1840,7 @@ input, select, textarea {
 		.album .img.img-last {
 			margin: 0 0 5px 0;
 		}
-		}
+	}
 
 /* List */
 
@@ -2419,7 +2417,6 @@ input, select, textarea {
 			top: 0;
 			left: 0;
 			width: 100%;
-			background: url("images/bg01.png");
 			background-size: 100% 100%;
 			z-index: 0;
 			opacity: 0.5;
@@ -2750,7 +2747,6 @@ input, select, textarea {
 				width: 275px;
 				z-index: 10002;
 				color: #858484;
-				background-image: url("images/bg02.png");
 				box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.35);
 			}
 
