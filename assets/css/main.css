@@ -1599,6 +1599,7 @@ input, select, textarea {
 		}
 	.boxnoborder {
 		background: #ffffff;
+		border-bottom: solid 1px #ffffff;
 		padding: 2.75em 1.75em 2.75em 1.75em;
 	}
 
