@@ -1748,6 +1748,13 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
+		.image.featured.center img {
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+			align-items: center;
+		}
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
